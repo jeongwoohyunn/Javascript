@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="rectangle.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		/* random */
+		/* 	var count1 = 0;
+		 var intervalId2 = setInterval(function(){
+		 var rand = Math.floor(Math.random()*10+1);
+		 console.log("-->" + rand);
+		 if(++count1==10){
+		 clearInterval(intervalId2);
+		 }
+		 },1000); */
+		// 0.0000001<= rand <=0.99999999
+		// 0.0000001<= rand*10 <=0.99999999
+		// 0.0000001<= floor(rand*10) <=0.99999999 <=RGB
+		// 0.0000001<= floor(rand*10)+1 <=0.99999999 <=left, top,width, height
+		var count1 = 0;
+		var intervalId2 = setInterval(function() {
+			var rand01 = Math.floor(Math.random() * 255);
+			var rand02 = Math.floor(Math.random() * 255);
+			var rand03 = Math.floor(Math.random() * 255);
+			var rand1 = Math.floor(Math.random() * 500 + 1);
+			var rand2 = Math.floor(Math.random() * 500 + 1);
+			var rand3 = Math.floor(Math.random() * 500 + 1);
+			var rand4 = Math.floor(Math.random() * 500 + 1);
+			var r1 = new Rectangle(rand1, rand2, rand3, rand4, "RGB(" + rand01 + "," + rand02
+					+ "," + rand03 + ")");
+			r1.show(++count1);
+			
+			/* if (++count1 == 10) {
+				clearInterval(intervalId2);
+			} */
+		}, 10);
+		var r2 = new Rectangle(100, 600, 400, 400, "#f00");
+		//r1.show();
+		r2.show()
+
+		/* timer */
+
+		//var f = function(){
+		//	console.log("hello~");
+		//}
+		//setTimeout(f/* function */,3000/* milliseconds */);
+		//익명객체
+	/* 	setTimeout(f = function() {
+			console.log("hello~");
+		}, 1000);
+
+		var count = 0;
+		var intervalId = setInterval(function() {
+			console.log(++count);
+			if (count == 10) {
+				clearInterval(intervalId);
+			}
+		}, 500); */
+	}
+	/* random */
+	/* 	var count1 = 0;
+	 var intervalId2 = setInterval(function(){
+	 var rand = Math.floor(Math.random()*10+1);
+	 console.log("-->" + rand);
+	 if(++count1==10){
+	 clearInterval(intervalId2);
+	 }
+	 },1000); */
+	// 0.0000001<= rand <=0.99999999
+	// 0.0000001<= rand*10 <=0.99999999
+	// 0.0000001<= floor(rand*10) <=0.99999999 <=RGB
+	// 0.0000001<= floor(rand*10)+1 <=0.99999999 <=left, top,width, height
+</script>
+</head>
+<body>
+</body>
+</html>

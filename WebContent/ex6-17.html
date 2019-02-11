@@ -4,16 +4,32 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-var changeText = function(el){
-	el.innerHTML = "Ooops!";
-}
+	onH1Clicked = function() {
+		var el = this;
+		el.innerHTML = "<strong>clicked</strong>";
+		el.style.color = "#f00";
+		/* onclicked 바로실행  여기서 html,css 조작이 가능 (바닐라 스크립트)*/
+	}
+	/* 브라우저가 function객체 만들어서 직접 */
+	window.onload = function() {
+		var h1El = document.getElementById("my-h1");
+		/* h1El.onclick = function(){
+			console.log("click");
+		} */
+		h1El.onclick = onH1Clicked;
+	}
 </script>
 </head>
 <body>
-<!--
-<h1 onclick="this.innerHTML='Ooops!';">Click on this text!</h1>
--->
-<h1 onclick="changeText(this)">Click on this text!</h1>
-
+	<h1 onclick="console.log('click');"
+		onmousedown="console.log('mousedown')"
+		onmouseup="console.log('mouseup')"
+		onmouseover="console.log('mouseover')"
+		onmouseout="console.log('mouseout')"
+		ondblclick="console.log('dblclick')">
+		<!-- 마우스 올라가고 나갔을때, 더블클릭 -->
+		Click on this text!
+	</h1>
+	<h1 id="my-h1">Click on this text!</h1>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		// 함수 객체 생성1
+		function f1(a, b) {
+			var sum = a + b;
+			return sum;
+		}
+		console.log(f1(10, 20));
+		
+		
+		// 함수 객체 생성2 (비추) 마무리하기
+		var f2 = new Function("a", "b", "var sum =a+b;");
+		console.log(f2(10, 20));
+		
+		
+		//함수 객체 생성2 (추천)
+		var f3 = function(a, b) {
+			var sum = a + b;
+			return sum;
+		}
+		console.log(f3(10, 20));
+		
+		
+	</script>
+</body>
+</html>
