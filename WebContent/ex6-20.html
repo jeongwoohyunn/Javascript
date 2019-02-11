@@ -3,21 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script>
-function mDown( obj ) {
-  obj.style.backgroundColor="#1ec5e5";
-  obj.innerHTML="버튼을 떼주세요.";
+<style type="text/css">
+div{
+	position:absolute;
+	left:10px;
+	top:50px;
+	background-color:#f00;
+	width:90px;
+	height:20px;
+	padding:40px;
 }
-function mUp( obj ) {
-  obj.style.backgroundColor="#D94A38";
-  obj.innerHTML="클릭하세요!";
+</style>
+<script>
+window.onload = function(){
+	var elDiv = document.getElementById("my-box");
+	elDiv.onmousedown = function(){
+		this.style.backgroundColor = "#00f";
+		this.innerText = "마우스를 떼";
+	}
+	elDiv.onmouseup = function(){
+		this.style.backgroundColor = "#f00";
+		this.innerText = "클릭하세요";
+	}
+	elDiv.onmouseover = function(){
+		randomX = 250;
+		randomY = 370;		
+
+		
+		this.style.left = randomX + "px";
+		this.style.top = randomY + "py";
+	}
 }
 </script>
-
 </head>
 <body>
-<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
-	클릭하세요!
-</div>
+<div id = "my-box">클릭하세요!</div>
 </body>
 </html>
