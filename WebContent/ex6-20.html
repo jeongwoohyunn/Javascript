@@ -3,28 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-
-function onLoad() {
-	/*
-	document.getElementById("myBtn").onclick = function(){
-	   displayDate();
-	};
-	*/
-	
-	document.getElementById("myBtn").onclick = displayDate;
+<script>
+function mDown( obj ) {
+  obj.style.backgroundColor="#1ec5e5";
+  obj.innerHTML="버튼을 떼주세요.";
 }
-
-function displayDate(){
-   document.getElementById("demo").innerHTML = Date();
+function mUp( obj ) {
+  obj.style.backgroundColor="#D94A38";
+  obj.innerHTML="클릭하세요!";
 }
 </script>
 
 </head>
-
-<body onload="onLoad();">
-	<p>버튼을 클릭하면  <em>displayDate()</em> 함수가 실행 됩니다.</p>
-	<button id="myBtn">Try it</button>
-	<p id="demo"></p>
+<body>
+<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+	클릭하세요!
+</div>
 </body>
 </html>
